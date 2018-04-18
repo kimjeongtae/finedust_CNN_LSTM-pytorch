@@ -6,13 +6,11 @@ class FineDustModel(nn.Module):
     
     def __init__(self, dropout_p):
         super(MiseModel, self).__init__()
-        
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels=10, out_channels=32, kernel_size=1),
             nn.BatchNorm2d(32),
             nn.ReLU()
         )
-        
         self.conv3 = nn.Sequential(
             nn.Conv2d(in_channels=10, out_channels=16, kernel_size=1),
             nn.BatchNorm2d(16),
@@ -21,7 +19,6 @@ class FineDustModel(nn.Module):
             nn.BatchNorm2d(32),
             nn.ReLU()
         )
-        
         self.conv2 = self.conv3x3 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=32, kernel_size=1),
             nn.BatchNorm2d(32),
